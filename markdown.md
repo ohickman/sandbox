@@ -1,38 +1,66 @@
-Big Headers with Equal sign
-===========================
-Sub headers with minus
-----------------------
+GitHub Markdown
+===============
 
-# H1
-## H2
-### H3
-#### H4
-##### H5
-###### H6
+Table of Contents
+-----------------
+
+* [Text Formatting](markdown.md#Text-Formatting)
+  * [Blockquote](markdown.md#blockquote)
+  * [Bold Text](markdown.md#Bold Text)
+* [Headers and Titles](markdown.md#Headers-and-Titles)
+* [Links](markdown.md#Links)
+* [Lists and Tables](markdown.md#Lists-and-Tables)
+* [Other Formatting](markdown.md#Other-Formatting)
+  * [Horizontal Rules](markdown.md#Horizontal-Rules)
+* [Images](markdown.md#Images)
+* [Footnotes](markdown.md#Footnotes)
 
 
-~~strikethrough~~
-**bold** double astrisks
-`monospace` uses back ticks
-*Italic* sing asterisks
-_another italic (emphasis)_ single underscore
-__under score__ double underscore
+Text Formatting
+---------------
 
-an em---dash is just three minus chars.
-Horizontal rules have a space before and after and can be made like these:
+### blockquote
 
----
+> If you are neutral in situations of injustice, you have chosen the side of the
+> oppressor.  If an elephant has its foot on the tial of a mouse and you say that you are neutral, the mouse will not appreciate your neutrality.
+Desmont Tutu
 
-***
+```
+> If you are neutral in situations of injustice, you have chosen the side of the
+> oppressor.  If an elephant has its foot on the tial of a mouse and you say that you are neutral, the mouse will not appreciate your neutrality.
+Desmont Tutu
+```
 
-___
+### Bold Text
 
-> block quotes are designated with brackets
-> but the text doesn't re-flow.
+**bold text**
 
-> What if I have a really long quote?  Will it _reflow_ into multiple lines?  Did you know that "taco cat" is a palindrome?  It is.
+```
+**bold text**
+```
 
-Code block
+### Emphasis
+
+words words _emphasized words_ words words
+
+```
+words words _emphasized words_ words words
+```
+
+### Italic / Oblique
+
+words words *italicized text* words words
+
+```
+words words *italicized text* words words
+```
+
+### Monospaced / code block
+
+#### Generic (no syntax highlighting)
+
+Designated with three leading back ticks (`) before the block, and three after:
+
 ```
 #define F_CPU 16000000
 #include <avr/io.h>
@@ -51,27 +79,211 @@ int main(void) {
 }
 ```
 
+#### Syntax Highlighting
+
+Follow the three leading backticks with the name of the
+[language](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml):
+
 ```python
-    @width.setter
-    def width(self, value):
-        try:
-            value = abs(int(value))
-        except ValueError:
-            print ("Could not convert \"%s\" into an int." %value)
-            value = 0
-        self.__width = value
+@width.setter
+def width(self, value):
+    try:
+        value = abs(int(value))
+    except ValueError:
+        print ("Could not convert \"%s\" into an int." %value)
+        value = 0
+    self.__width = value
 ```
 
-    @width.setter
-    def width(self, value):
-        try:
-            value = abs(int(value))
-        except ValueError:
-            print ("Could not convert \"%s\" into an int." %value)
-            value = 0
-        self.__width = value
+The opening backticks and code name in that example look like this:
 
-Tables get headers by using a horizontal rule markup
+    ```python
+
+#### In-line monospace
+
+To use `monospace` within a paragraph use a single leading and tailing back tick.
+
+```
+To use `monospace` within a paragraph use a single leading and tailing back tick.
+```
+
+### Paragraphs
+
+Paragraphs are delimited by double carrage returns.
+
+There must be a blank line between paragraphs to designate them as such.
+You may add single carage returns so that your text is easier to see (say in
+a text editor that is only 80 chars wide), but when this text is interpreted by a GitHub's markdown engine it will be reflowed regardless of line length.
+
+```
+Paragraphs are delimited by double carrage returns.
+
+There must be a blank line between paragraphs to designate them as such.
+You may add single carage returns so that your text is easier to see (say in
+a text editor that is only 80 chars wide), but when this text is interpreted by a GitHub's markdown engine it will be reflowed regardless of line length.
+```
+
+### Strike Out
+
+words words ~~strikeout~~ words words
+
+```
+words words ~~strikeout~~ words words
+```
+
+Headers and Titles
+------------------
+
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
+
+```
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
+```
+
+Head 1
+======
+
+Head 2
+------
+
+```
+Head 1
+======
+
+Head 2
+------
+```
+
+Links
+-----
+
+Links in your [text](http://en.wikipedia.org/wiki/Written_text) can be in-line
+with the text and can have optional [mouseover](http://www.w3schools.com/tags/att_img_alt.asp "w3schools rocks!")
+attribute.  You can also define [your][1] links later in the [document] by
+styling them like a list of [footnotes][2] (this feels like the [markdown] way
+of doing things).  (The foot note list can be anywhere in the document, mine is
+at the very bottom.)
+
+Lastly, here is a link to the [README file](README.md) in this repo.  Note that
+this is a relative link.  If need be you can point out the path with `./` and
+`../` type syntax.
+
+```
+Links in your [text](http://en.wikipedia.org/wiki/Written_text) can be in-line
+with the text and can have optional [mouseover](http://www.w3schools.com/tags/att_img_alt.asp "w3schools rocks!")
+attribute.  You can also define [your][1] links later in the [document] by
+styling them like a list of [footnotes][2] (this feels like the [markdown] way
+of doing things).  (The foot note list can be anywhere in the document, mine is
+at the very bottom.)
+
+Lastly, here is a link to the [README file](README.md) in this repo.  Note that
+this is a relative link.  If need be you can point out the path with `./` and
+`../` type syntax.
+```
+
+Links within a document may also be supported.  Here is the code for the table
+of contents at the top of this document:
+
+```
+* [Text Formatting](markdown.md#Text-Formatting)
+  * [Blockquote](markdown.md#blockquote)
+  * [Bold Text](markdown.md#Bold Text)
+* [Headers and Titles](markdown.md#Headers-and-Titles)
+* [Links](markdown.md#Links)
+* [Lists and Tables](markdown.md#Lists-and-Tables)
+* [Other Formatting](markdown.md#Other-Formatting)
+  * [Horizontal Rules](markdown.md#Horizontal-Rules)
+* [Images](markdown.md#Images)
+* [Footnotes](markdown.md#Footnotes)
+```
+
+Lists and Tables
+----------------
+
+### Bulleted Lists
+
+* item 1
+* item 2
+* deeper indentation not supported
+- and you can use other symbols
++ in place of the asterisks
+  * bulleted lists can have child lists too
+  * you just have to manually indent them with two spaces
+* Lots of different things going on in this list
+ * what happens if you only indent by one space?
+
+```
+* item 1
+* item 2
+* deeper indentation not supported
+- and you can use other symbols
++ in place of the asterisks
+  * bulleted lists can have child lists too
+  * you just have to manually indent them with two spaces
+* Lots of different things going on in this list
+ * what happens if you only indent by one space?
+```
+
+### Numbered List
+
+1. First item in the parent list.
+  1. first item in the child list.
+    1. What if I want a grandchild in a numbered list.
+  2. second item in the child list.
+  1. you don't even have ot use the coorect numbers!
+  * unnumbered item in the child list gets numbered anyhow.
+   * but its child list doesn't.
+  - each level of a list has uniform numbering.
+2. A line on a list can actually be broken into multiple paragraphs.
+
+   You just need to manually indent the second paragraph so that it is aligned with the first, then you need to include a blank line - see the section on paragraph styling in this document.
+
+3. Then you continue with the list as usual.
+
+```
+1. First item in the parent list.
+  1. first item in the child list.
+    1. What if I want a grandchild in a numbered list.
+  2. second item in the child list.
+  1. you don't even have ot use the coorect numbers!
+  * unnumbered item in the child list gets numbered anyhow.
+   * but its child list doesn't.
+  - each level of a list has uniform numbering.
+2. A line on a list can actually be broken into multiple paragraphs.
+
+   You just need to manually indent the second paragraph so that it is aligned with the first, then you need to include a blank line - see the section on paragraph styling in this document.
+
+3. Then you continue with the list as usual.
+```
+
+### Task Lists
+
+* [x] Make cheat-sheet of GitHub markdown
+* [x] Upload that cheat-sheat to GitHub
+* [ ] Answer a bunch of other questions
+* [ ] Achieve world ~~domination~~ peace.
+
+```
+* [x] Make cheat-sheet of GitHub markdown
+* [x] Upload that cheat-sheat to GitHub
+* [ ] Answer a bunch of other questions
+* [ ] Achieve world ~~domination~~ peace.
+```
+
+### Tables
+
+Tables can be made with the pipe character:
+
 | header 1 | header 2 |
 | --- | --- |
 |left | right|
@@ -79,60 +291,64 @@ Tables get headers by using a horizontal rule markup
 |column  |is aligned     |
 no outter |pipes
 
-Paragraphs are delimited by double carrage returns.
+```
+| header 1 | header 2 |
+| --- | --- |
+|left | right|
+| center | `other style` |
+|column  |is aligned     |
+no outter |pipes
+```
 
-So there is a blank line in your source text and there is a blank line in the final document.
-But if you want the paragraphs butted up against eachother, that is OK too.
+Other Formatting
+----------------
 
-Task List
-* [ ] not complted
-* [x] completed
-[ ] not completed
-[x] completed
+### Horizontal Rules
 
-Bulleted List
-* item 1
-* item 2
-* deeper indentation not supported
-- and you can use other symbols
-+ in place of the asterisks
+Three minus-signs(-), asterisks (*), or underscores (_).
 
-Numbered List
-# first item
-# second item
-# nested lists not supported
+---
 
-Manually nubered list
-1. first item
-2. second item
-3. third item is multiple lines long.
-   Aparently there is more to say about this item than there was about the others.
+***
 
-Perhaps there are sub-lists:
-1. First item in the parent list.
-  1. first item in the child list.
-    1. What if I want a grandchild in a numbered list.
-  2. second item in the child list.
-  1. you don't even have ot use the coorect numbers!
-  * unnumbered item in the child list.
-   * deeper unnumberd item is a grandchild.
+___
 
-Some HTML can be used in GitHub's markdown
-    <pre>
-    <div>
-    <table>, <tr>, <td>, <th>
-    
+```
+---
+
+***
+
+___
+```
+
 Images
-![alt attribute 1](http://sagacious.us/sandbox/sandbox.png "alt attribute 2")
+------
+
+![alt attribute 1](http://sagacious.us/sandbox/sandbox.png "mouseover text (optional)")
+
 ![alt attribute 1][href of image]
 
+```
+![alt attribute 1](http://sagacious.us/sandbox/sandbox.png "mouseover text (optional)")
 
-Links in your [text](http://en.wikipedia.org/wiki/Written_text) are also possible, you can even have [hover text](http://en.wikipedia.org/wiki/Mouseover "Mouseover").
+![alt attribute 1][href of image]
+```
 
-Links as foot notes
-In my text I might make a [claim] [1] that needs to be supported with a [link] [2] to something.  So I put the foot note call outs where they need to be and I add a list at the bottom of the page (or just about anywhere else in the .md document) that supplies the href for the citations.  Perhaps you don't [want a number].
+Footnotes
+---------
 
-  [1]: http://en.wikipedia.org/wiki/Proposition
-  [2]: http://en.wikipedia.org/wiki/Hyperlink
-  [want a number]: http://www.example.com
-  [href of image]: http://sagacious.us/sandbox/sandbox.png "alt attribute 2"
+These were described earlier (under the section on links, they aren't usually
+visible when a `.md` file is parsed.
+
+  [1]: http://www.grammar-monster.com/easily_confused/youre_your.htm
+  [2]: http://en.wikipedia.org/wiki/Footnote "Wikipedia article on notes"
+  [document]: http://en.wikipedia.org/wiki/Document
+  [markdown]: http://en.wikipedia.org/wiki/Markdown
+
+```
+  [1]: http://www.grammar-monster.com/easily_confused/youre_your.htm
+  [2]: http://en.wikipedia.org/wiki/Footnote "Wikipedia article on notes"
+  [document]: http://en.wikipedia.org/wiki/Document
+  [markdown]: http://en.wikipedia.org/wiki/Markdown
+```
+
