@@ -218,6 +218,26 @@ Here is the code for the (incomplete) table of contents at the top of this page:
 * [Footnotes](markdown.md#footnotes)
 ```
 
+### Special GitHub links
+
+This example take from [here](https://help.github.com/articles/github-flavored-markdown#references)
+
+* SHA: 16c999e8c71134401a78d4d46435517b2271d6ac
+* User@SHA: mojombo@16c999e8c71134401a78d4d46435517b2271d6ac
+* User/Repository@SHA: mojombo/github-flavored-markdown@16c999e8c71134401a78d4d46435517b2271d6ac
+* #Num: #1
+* User#Num: mojombo#1
+* User/Repository#Num: mojombo/github-flavored-markdown#1
+
+```
+* SHA: 16c999e8c71134401a78d4d46435517b2271d6ac
+* User@SHA: mojombo@16c999e8c71134401a78d4d46435517b2271d6ac
+* User/Repository@SHA: mojombo/github-flavored-markdown@16c999e8c71134401a78d4d46435517b2271d6ac
+* #Num: #1
+* User#Num: mojombo#1
+* User/Repository#Num: mojombo/github-flavored-markdown#1
+```
+
 Lists and Tables
 ----------------
 
@@ -273,11 +293,12 @@ Lists and Tables
 2. A line on a list can actually be broken into multiple paragraphs.
 
    You just need to manually indent the second paragraph so that it is aligned with the first, then you need to include a blank line - see the section on paragraph styling in this document.
-
 3. Then you continue with the list as usual.
 ```
 
 ### Task Lists
+
+(support coming soon?)
 
 - [x] Make cheat-sheet of GitHub markdown
 - [x] Upload that cheat-sheat to GitHub
@@ -349,8 +370,8 @@ Footnotes
 ---------
 
 These were described earlier (under the section on links, they aren't usually
-visible when a `.md` file is parsed - you'll need to hit the [raw](../raw/master/markdown.md)
-button above to see how that works.
+visible when a `.md` file is parsed - you'll need to hit the button at the top 
+of this page to see how that works.
 
   [1]: http://www.grammar-monster.com/easily_confused/youre_your.htm
   [2]: http://en.wikipedia.org/wiki/Footnote "Wikipedia article on notes"
