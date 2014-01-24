@@ -4,20 +4,26 @@ GitHub Markdown
 Table of Contents
 -----------------
 
-* [Text Formatting](markdown.md#eext-formatting)
-  * [Blockquote](markdown.md#blockquote)
-  * [Bold Text](markdown.md#bold-text)
-  * [Emphasis](markdown.md#emphasis)
-  * [Italic / Oblique](markdown.md#italic--oblique)
-  * [Monospaced / Code Block](markdown.md#monospaced--code-block)
-* [Headers and Titles](markdown.md#headers-and-titles)
-* [Links](markdown.md#links)
-* [Lists and Tables](markdown.md#lists-and-tables)
+* [Text Formatting](##text-formatting)
+  * [Blockquote](#blockquote)
+  * [Bold Text](#bold-text)
+  * [Emphasis](#emphasis)
+  * [Italic / Oblique](#italic--oblique)
+  * [Monospaced / Code Block](#monospaced--code-block)
+    * [Without Syntax Highlighting](#generic-no-syntax-highlighting)
+    * [With Syntax Highlighting](#syntax-highlighting)
+    * [Inline with text](#in-line-monospace)
+  * [Paragraphs](#Paragraphs)
+  * [Strike Out](#strike-out)
+* [Headers and Titles](#headers-and-titles)
+* [Links](#links)
+* [Lists and Tables](#lists-and-tables)
   * [Task Lists](#task-lists)
-* [Other Formatting](markdown.md#other-formatting)
-  * [Horizontal Rules](markdown.md#horizontal-rules)
-* [Images](markdown.md#images)
-* [Footnotes](markdown.md#footnotes)
+* [Images](#images)
+* [Other Formatting](#other-formatting)
+  * [Horizontal Rules](#horizontal-rules)
+  * [HTML](#html)
+* [Footnotes](#footnotes)
 
 
 Text Formatting
@@ -27,11 +33,13 @@ Text Formatting
 
 > If you are neutral in situations of injustice, you have chosen the side of the
 > oppressor.  If an elephant has its foot on the tial of a mouse and you say that you are neutral, the mouse will not appreciate your neutrality.
+
 Desmont Tutu
 
 ```
 > If you are neutral in situations of injustice, you have chosen the side of the
 > oppressor.  If an elephant has its foot on the tial of a mouse and you say that you are neutral, the mouse will not appreciate your neutrality.
+
 Desmont Tutu
 ```
 
@@ -47,8 +55,18 @@ Desmont Tutu
 
 words words _emphasized words_ words words
 
+Things not considered emphasis
+* Double underscores like __init__ because that looks a lot like code
+* snake_case_words also look like code so no emphasis
+* _private() ...this one I don't know...
+
 ```
 words words _emphasized words_ words words
+
+Things not considered emphasis
+* Double underscores like __init__ because that looks a lot like code
+* snake_case_words also look like code so no emphasis
+* _private() ...this one I don't know...
 ```
 
 ### Italic / Oblique
@@ -198,29 +216,38 @@ this is a relative link.  If need be you can point out the path with `./` and
 Links within a document are also supported.  Note that
 * spaces are replaced with dashes (`-`).
 * all chars are lower case.
-* special characters like `/` are omitted.
+* special characters like `/`, `(`, `)` are omitted.
 
 Here is the code for the (incomplete) table of contents at the top of this page:
 
 ```
-* [Text Formatting](markdown.md#eext-formatting)
-  * [Blockquote](markdown.md#blockquote)
-  * [Bold Text](markdown.md#bold-text)
-  * [Emphasis](markdown.md#emphasis)
-  * [Italic / Oblique](markdown.md#italic--oblique)
-  * [Monospaced / Code Block](markdown.md#monospaced--code-block)
-* [Headers and Titles](markdown.md#headers-and-titles)
-* [Links](markdown.md#links)
-* [Lists and Tables](markdown.md#lists-and-tables)
-* [Other Formatting](markdown.md#other-formatting)
-  * [Horizontal Rules](markdown.md#horizontal-rules)
-* [Images](markdown.md#images)
-* [Footnotes](markdown.md#footnotes)
+
+* [Text Formatting](##text-formatting)
+  * [Blockquote](#blockquote)
+  * [Bold Text](#bold-text)
+  * [Emphasis](#emphasis)
+  * [Italic / Oblique](#italic--oblique)
+  * [Monospaced / Code Block](#monospaced--code-block)
+    * [Without Syntax Highlighting](#generic-no-syntax-highlighting)
+    * [With Syntax Highlighting](#syntax-highlighting)
+    * [Inline with text](#in-line-monospace)
+  * [Paragraphs](#Paragraphs)
+  * [Strike Out](#strike-out)
+* [Headers and Titles](#headers-and-titles)
+* [Links](#links)
+* [Lists and Tables](#lists-and-tables)
+  * [Task Lists](#task-lists)
+* [Images](#images)
+* [Other Formatting](#other-formatting)
+  * [Horizontal Rules](#horizontal-rules)
+  * [HTML](#html)
+* [Footnotes](#footnotes)
 ```
 
 ### Special GitHub links
 
-This example take from [here](https://help.github.com/articles/github-flavored-markdown#references)
+This example take from [here](https://help.github.com/articles/github-flavored-markdown#references),
+where they supposedly work, but they don't seem to be working here.
 
 * SHA: 16c999e8c71134401a78d4d46435517b2271d6ac
 * User@SHA: mojombo@16c999e8c71134401a78d4d46435517b2271d6ac
@@ -261,6 +288,8 @@ Lists and Tables
 + in place of the asterisks
   * bulleted lists can have child lists too
   * you just have to manually indent them with two spaces
+    * lets go deeper
+      * we gotta go deeper!
 * Lots of different things going on in this list
  * what happens if you only indent by one space?
 ```
@@ -273,12 +302,11 @@ Lists and Tables
   2. second item in the child list.
   1. you don't even have ot use the coorect numbers!
   * unnumbered item in the child list gets numbered anyhow.
-   * but its child list doesn't.
+    *  but its child list doesn't.
   - each level of a list has uniform numbering.
 2. A line on a list can actually be broken into multiple paragraphs.
 
    You just need to manually indent the second paragraph so that it is aligned with the first, then you need to include a blank line - see the section on paragraph styling in this document.
-
 3. Then you continue with the list as usual.
 
 ```
@@ -288,7 +316,7 @@ Lists and Tables
   2. second item in the child list.
   1. you don't even have ot use the coorect numbers!
   * unnumbered item in the child list gets numbered anyhow.
-   * but its child list doesn't.
+    *  but its child list doesn't.
   - each level of a list has uniform numbering.
 2. A line on a list can actually be broken into multiple paragraphs.
 
@@ -316,20 +344,33 @@ Lists and Tables
 
 Tables can be made with the pipe character:
 
-| header 1 | header 2 |
-| --- | --- |
-|left | right|
-| center | `other style` |
-|column  |is aligned     |
-no outter |pipes
+| header 1 | header 2 | header 3 | header 4 |
+|:---------|:---:| ---:|---|
+|left      |center |right |not specified|
+|aligned   | columns | or ragged|are ok|
+| _same_ |*style*|~as~|`elsewhere` |
+don't | need | outter | pipes
 
 ```
-| header 1 | header 2 |
-| --- | --- |
-|left | right|
-| center | `other style` |
-|column  |is aligned     |
-no outter |pipes
+| header 1 | header 2 | header 3 | header 4 |
+|:---------|:---:| ---:|---|
+|left      |center |right |not specified|
+|aligned   | columns | or ragged|are ok|
+| _same_ |*style*|~as~|`elsewhere` |
+don't | need | outter | pipes
+```
+
+Images
+------
+
+![alt attribute](http://sagacious.us/sandbox/sandbox.png "hover text (optional - but recomended by web standards)")
+
+![alt attribute][href of image]
+
+```
+![alt attribute](http://sagacious.us/sandbox/sandbox.png "hover text (optional - but recomended by web standards)")
+
+![alt attribute][href of image]
 ```
 
 Other Formatting
@@ -353,28 +394,26 @@ ___
 ___
 ```
 
-Images
-------
-
-![alt attribute 1](http://sagacious.us/sandbox/sandbox.png "hover text (optional - but recomended by web standards)")
-
-![alt attribute 1][href of image]
-
-```
-![alt attribute 1](http://sagacious.us/sandbox/sandbox.png "hover text (optional - but recomended by web standards)")
-
-![alt attribute 1][href of image]
-```
+### HTML
+Turns out that you can use a lot of [HTML](html.md) in a GFM markdown file.
 
 Footnotes
 ---------
 
 These were described earlier (under the section on links, they aren't usually
-visible when a `.md` file is parsed - you'll need to hit the button at the top 
-of this page to see how that works.
+visible when a `.md` file is parsed - you'll need to hit "raw" the button at the
+top of this page to see how that works.
 
-  [1]: http://www.grammar-monster.com/easily_confused/youre_your.htm
-  [2]: http://en.wikipedia.org/wiki/Footnote "Wikipedia article on notes"
-  [document]: http://en.wikipedia.org/wiki/Document
+[1]: http://www.grammar-monster.com/easily_confused/youre_your.htm
+[2]: http://en.wikipedia.org/wiki/Footnote "Wikipedia article on notes"
+[document]: http://en.wikipedia.org/wiki/Document
   [markdown]: http://en.wikipedia.org/wiki/Markdown
   [href of image]: http://sagacious.us/sandbox/sandbox.png "hover text"
+
+```
+[1]: http://www.grammar-monster.com/easily_confused/youre_your.htm
+[2]: http://en.wikipedia.org/wiki/Footnote "Wikipedia article on notes"
+[document]: http://en.wikipedia.org/wiki/Document
+  [markdown]: http://en.wikipedia.org/wiki/Markdown
+  [href of image]: http://sagacious.us/sandbox/sandbox.png "hover text"
+```
