@@ -1,0 +1,32 @@
+Start a new repo:
+```
+$ git init projectName
+````
+
+Stage files:
+    $ git add filename.ext
+    $ git add *.py
+
+Commit changes:
+    $ git commit -m "Initial commit"
+
+Clone across two networked computers
+    $ git clone ssh://userName@123.45.67.234:22/path/to/local/repo
+
+Setup the location of `origin`:
+    $ git remote add origin https://github.com/userName/repoName.git
+
+Create a new repo on GitHub.com named *sandbox*:
+    $ curl -u 'ohickman' https://api.github.com/user/repos -d '{"name":"sandbox"}'
+
+
+Push local up to origin
+    git push origin master
+    
+origin	https://github.com/ohickman/sandbox.git (fetch)
+origin	https://github.com/ohickman/sandbox.git (fetch)
+origin	https://github.com/ohickman/sandbox.git (push)
+origin	https://github.com/ohickman/sandbox.git (push)
+
+
+
