@@ -4,16 +4,20 @@ GitHub Markdown
 Table of Contents
 -----------------
 
-* [Text Formatting](markdown.md#Text-Formatting)
+* [Text Formatting](markdown.md#eext-formatting)
   * [Blockquote](markdown.md#blockquote)
-  * [Bold Text](markdown.md#Bold Text)
-* [Headers and Titles](markdown.md#Headers-and-Titles)
-* [Links](markdown.md#Links)
-* [Lists and Tables](markdown.md#Lists-and-Tables)
-* [Other Formatting](markdown.md#Other-Formatting)
-  * [Horizontal Rules](markdown.md#Horizontal-Rules)
-* [Images](markdown.md#Images)
-* [Footnotes](markdown.md#Footnotes)
+  * [Bold Text](markdown.md#bold-text)
+  * [Emphasis](markdown.md#emphasis)
+  * [Italic / Oblique](markdown.md#italic--oblique)
+  * [Monospaced / Code Block](markdown.md#monospaced--code-block)
+* [Headers and Titles](markdown.md#headers-and-titles)
+* [Links](markdown.md#links)
+* [Lists and Tables](markdown.md#lists-and-tables)
+  * [Task Lists](#task-lists)
+* [Other Formatting](markdown.md#other-formatting)
+  * [Horizontal Rules](markdown.md#horizontal-rules)
+* [Images](markdown.md#images)
+* [Footnotes](markdown.md#footnotes)
 
 
 Text Formatting
@@ -191,20 +195,27 @@ this is a relative link.  If need be you can point out the path with `./` and
 `../` type syntax.
 ```
 
-Links within a document may also be supported.  Here is the code for the table
-of contents at the top of this document:
+Links within a document are also supported.  Note that
+* spaces are replaced with dashes (`-`).
+* all chars are lower case.
+* special characters like `/` are omitted.
+
+Here is the code for the (incomplete) table of contents at the top of this page:
 
 ```
-* [Text Formatting](markdown.md#Text-Formatting)
+* [Text Formatting](markdown.md#eext-formatting)
   * [Blockquote](markdown.md#blockquote)
-  * [Bold Text](markdown.md#Bold Text)
-* [Headers and Titles](markdown.md#Headers-and-Titles)
-* [Links](markdown.md#Links)
-* [Lists and Tables](markdown.md#Lists-and-Tables)
-* [Other Formatting](markdown.md#Other-Formatting)
-  * [Horizontal Rules](markdown.md#Horizontal-Rules)
-* [Images](markdown.md#Images)
-* [Footnotes](markdown.md#Footnotes)
+  * [Bold Text](markdown.md#bold-text)
+  * [Emphasis](markdown.md#emphasis)
+  * [Italic / Oblique](markdown.md#italic--oblique)
+  * [Monospaced / Code Block](markdown.md#monospaced--code-block)
+* [Headers and Titles](markdown.md#headers-and-titles)
+* [Links](markdown.md#links)
+* [Lists and Tables](markdown.md#lists-and-tables)
+* [Other Formatting](markdown.md#other-formatting)
+  * [Horizontal Rules](markdown.md#horizontal-rules)
+* [Images](markdown.md#images)
+* [Footnotes](markdown.md#footnotes)
 ```
 
 Lists and Tables
@@ -268,16 +279,16 @@ Lists and Tables
 
 ### Task Lists
 
-* [x] Make cheat-sheet of GitHub markdown
-* [x] Upload that cheat-sheat to GitHub
-* [ ] Answer a bunch of other questions
-* [ ] Achieve world ~~domination~~ peace.
+- [x] Make cheat-sheet of GitHub markdown
+- [x] Upload that cheat-sheat to GitHub
+- [ ] Answer a bunch of other questions
+- [ ] Achieve world ~~domination~~ peace.
 
 ```
-* [x] Make cheat-sheet of GitHub markdown
-* [x] Upload that cheat-sheat to GitHub
-* [ ] Answer a bunch of other questions
-* [ ] Achieve world ~~domination~~ peace.
+- [x] Make cheat-sheet of GitHub markdown
+- [x] Upload that cheat-sheat to GitHub
+- [ ] Answer a bunch of other questions
+- [ ] Achieve world ~~domination~~ peace.
 ```
 
 ### Tables
@@ -324,12 +335,12 @@ ___
 Images
 ------
 
-![alt attribute 1](http://sagacious.us/sandbox/sandbox.png "mouseover text (optional)")
+![alt attribute 1](http://sagacious.us/sandbox/sandbox.png "hover text (optional - but recomended by web standards)")
 
 ![alt attribute 1][href of image]
 
 ```
-![alt attribute 1](http://sagacious.us/sandbox/sandbox.png "mouseover text (optional)")
+![alt attribute 1](http://sagacious.us/sandbox/sandbox.png "hover text (optional - but recomended by web standards)")
 
 ![alt attribute 1][href of image]
 ```
@@ -338,17 +349,11 @@ Footnotes
 ---------
 
 These were described earlier (under the section on links, they aren't usually
-visible when a `.md` file is parsed.
+visible when a `.md` file is parsed - you'll need to hit the [raw](../raw/master/markdown.md)
+button above to see how that works.
 
   [1]: http://www.grammar-monster.com/easily_confused/youre_your.htm
   [2]: http://en.wikipedia.org/wiki/Footnote "Wikipedia article on notes"
   [document]: http://en.wikipedia.org/wiki/Document
   [markdown]: http://en.wikipedia.org/wiki/Markdown
-
-```
-  [1]: http://www.grammar-monster.com/easily_confused/youre_your.htm
-  [2]: http://en.wikipedia.org/wiki/Footnote "Wikipedia article on notes"
-  [document]: http://en.wikipedia.org/wiki/Document
-  [markdown]: http://en.wikipedia.org/wiki/Markdown
-```
-
+  [href of image]: http://sagacious.us/sandbox/sandbox.png "hover text"
