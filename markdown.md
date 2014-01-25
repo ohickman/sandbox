@@ -21,7 +21,6 @@ Table of Contents
   * [Task Lists](#task-lists)
 * [Images](#images)
 * [Other Formatting](#other-formatting)
-  * [Tool Tip](#tool-tip)
   * [Horizontal Rules](#horizontal-rules)
   * [HTML](#html)
 * [Footnotes](#footnotes)
@@ -57,7 +56,7 @@ Desmont Tutu
 words words _emphasized words_ words words
 
 Double underscores still envoke em so be careful: __init__ will get an emphasis,
-but it shoudl probably be written `__init__` anyway.
+but it should probably be written `__init__` anyway.
 
 Things not considered emphasis
 * snake_case_words also look like code so no emphasis
@@ -86,7 +85,7 @@ words words *italicized text* words words
 
 #### Generic (no syntax highlighting)
 
-Designated with three leading back ticks (```) or (` ` `) before the block, and three after:
+Designated with three leading back ticks (`) before the block, and three after:
 
 ```
 @width.setter
@@ -249,7 +248,6 @@ Here is the code for the (incomplete) table of contents at the top of this page:
   * [Task Lists](#task-lists)
 * [Images](#images)
 * [Other Formatting](#other-formatting)
-  * [Tool Tip](#tool-tip)
   * [Horizontal Rules](#horizontal-rules)
   * [HTML](#html)
 * [Footnotes](#footnotes)
@@ -269,6 +267,7 @@ where they supposedly work, but they don't seem to be working here.
 * email address: handle@example.com
 * URL: http://www.example.com
 * URL: www.example.com
+* URL: example.com
 
 ```
 * SHA: 16c999e8c71134401a78d4d46435517b2271d6ac
@@ -280,6 +279,7 @@ where they supposedly work, but they don't seem to be working here.
 * email address: handle@example.com
 * URL: http://www.example.com
 * URL: www.example.com
+* URL: example.com
 ```
 
 Lists and Tables
@@ -393,14 +393,6 @@ Images
 Other Formatting
 ----------------
 
-### Tool Tip
-
-Basically just a [hyperlink]("anchor tag") with no href defined.
-
-```
-Basically just a [hyperlink]("anchor tag") with no href defined.
-```
-
 ### Horizontal Rules
 
 Three minus-signs(`-`), asterisks (`*`), or underscores (`_`).
@@ -427,11 +419,11 @@ Footnotes
 
 These were described earlier (under the section on links, they aren't usually
 visible when a `.md` file is parsed - you'll need to hit "raw" the button at the
-top of this page to see how that works.  Note that indentation and bullets work
-as shown.
+top of this page to see how that works.  Note that indentation doesn't matter,
+but bullets do (bullets break the functionality)
 
-* [1]: http://www.grammar-monster.com/easily_confused/youre_your.htm
-* [2]: http://en.wikipedia.org/wiki/Footnote "Wikipedia article on notes"
+[1]: http://www.grammar-monster.com/easily_confused/youre_your.htm
+[2]: http://en.wikipedia.org/wiki/Footnote "Wikipedia article on notes"
 [document]: http://en.wikipedia.org/wiki/Document
   [markdown]: http://en.wikipedia.org/wiki/Markdown
   [href of image]: http://sagacious.us/sandbox/sandbox.png "hover text"
