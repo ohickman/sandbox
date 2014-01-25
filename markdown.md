@@ -1,4 +1,4 @@
-GitHub Markdown
+GitHub Flavored Markdown (GFM)
 ===============
 
 Table of Contents
@@ -13,7 +13,7 @@ Table of Contents
     * [Without Syntax Highlighting](#generic-no-syntax-highlighting)
     * [With Syntax Highlighting](#syntax-highlighting)
     * [Inline with text](#in-line-monospace)
-  * [Paragraphs](#Paragraphs)
+  * [Paragraphs](#paragraphs)
   * [Strike Out](#strike-out)
 * [Headers and Titles](#headers-and-titles)
 * [Links](#links)
@@ -21,6 +21,7 @@ Table of Contents
   * [Task Lists](#task-lists)
 * [Images](#images)
 * [Other Formatting](#other-formatting)
+  * [Tool Tip](#tool-tip)
   * [Horizontal Rules](#horizontal-rules)
   * [HTML](#html)
 * [Footnotes](#footnotes)
@@ -55,18 +56,22 @@ Desmont Tutu
 
 words words _emphasized words_ words words
 
+Double underscores still envoke em so be careful: __init__ will get an emphasis,
+but it shoudl probably be written `__init__` anyway.
+
 Things not considered emphasis
-* Double underscores like __init__ because that looks a lot like code
 * snake_case_words also look like code so no emphasis
-* _private() ...this one I don't know...
+* _private() Because there is no closing tag.
 
 ```
 words words _emphasized words_ words words
 
+Double underscores still envoke em so be careful: __init__ will get an emphasis,
+but it shoudl probably be written `__init__` anyway.
+
 Things not considered emphasis
-* Double underscores like __init__ because that looks a lot like code
 * snake_case_words also look like code so no emphasis
-* _private() ...this one I don't know...
+* _private() Because there is no closing tag.
 ```
 
 ### Italic / Oblique
@@ -81,25 +86,30 @@ words words *italicized text* words words
 
 #### Generic (no syntax highlighting)
 
-Designated with three leading back ticks (`) before the block, and three after:
+Designated with three leading back ticks (```) or (` ` `) before the block, and three after:
 
 ```
-#define F_CPU 16000000
-#include <avr/io.h>
-#include <util/delay.h>
-
-int main(void) {
-    DDRB = 0X01; // setup pin 0 on port B
-    while (1) // loop forever
-    {
-        PORTB = 0X01;   // set pin 0 on port B high
-        _delay_ms(500);
-        PORTB = 0x00;   // set pin 0 on por B low
-        _delay_ms(500);
-    }
-    return 0;
-}
+@width.setter
+def width(self, value):
+    try:
+        value = abs(int(value))
+    except ValueError:
+        print ("Could not convert \"%s\" into an int." %value)
+        value = 0
+    self.__width = value
 ```
+
+Or, so long as they are set apart as a single [paragraphs](#paragraphs)
+the code block can be indicated with four leading spaces
+
+    @width.setter
+    def width(self, value):
+        try:
+            value = abs(int(value))
+        except ValueError:
+            print ("Could not convert \"%s\" into an int." %value)
+            value = 0
+        self.__width = value
 
 #### Syntax Highlighting
 
@@ -214,6 +224,7 @@ this is a relative link.  If need be you can point out the path with `./` and
 ```
 
 Links within a document are also supported.  Note that
+* All [headers](#headers-and-titles) are automatically turned into anchors.
 * spaces are replaced with dashes (`-`).
 * all chars are lower case.
 * special characters like `/`, `(`, `)` are omitted.
@@ -221,7 +232,6 @@ Links within a document are also supported.  Note that
 Here is the code for the (incomplete) table of contents at the top of this page:
 
 ```
-
 * [Text Formatting](##text-formatting)
   * [Blockquote](#blockquote)
   * [Bold Text](#bold-text)
@@ -231,7 +241,7 @@ Here is the code for the (incomplete) table of contents at the top of this page:
     * [Without Syntax Highlighting](#generic-no-syntax-highlighting)
     * [With Syntax Highlighting](#syntax-highlighting)
     * [Inline with text](#in-line-monospace)
-  * [Paragraphs](#Paragraphs)
+  * [Paragraphs](#paragraphs)
   * [Strike Out](#strike-out)
 * [Headers and Titles](#headers-and-titles)
 * [Links](#links)
@@ -239,6 +249,7 @@ Here is the code for the (incomplete) table of contents at the top of this page:
   * [Task Lists](#task-lists)
 * [Images](#images)
 * [Other Formatting](#other-formatting)
+  * [Tool Tip](#tool-tip)
   * [Horizontal Rules](#horizontal-rules)
   * [HTML](#html)
 * [Footnotes](#footnotes)
@@ -246,7 +257,7 @@ Here is the code for the (incomplete) table of contents at the top of this page:
 
 ### Special GitHub links
 
-This example take from [here](https://help.github.com/articles/github-flavored-markdown#references),
+Most of these examples are taken from [here](https://help.github.com/articles/github-flavored-markdown#references),
 where they supposedly work, but they don't seem to be working here.
 
 * SHA: 16c999e8c71134401a78d4d46435517b2271d6ac
@@ -255,6 +266,9 @@ where they supposedly work, but they don't seem to be working here.
 * #Num: #1
 * User#Num: mojombo#1
 * User/Repository#Num: mojombo/github-flavored-markdown#1
+* email address: handle@example.com
+* URL: http://www.example.com
+* URL: www.example.com
 
 ```
 * SHA: 16c999e8c71134401a78d4d46435517b2271d6ac
@@ -263,6 +277,9 @@ where they supposedly work, but they don't seem to be working here.
 * #Num: #1
 * User#Num: mojombo#1
 * User/Repository#Num: mojombo/github-flavored-markdown#1
+* email address: handle@example.com
+* URL: http://www.example.com
+* URL: www.example.com
 ```
 
 Lists and Tables
@@ -356,7 +373,7 @@ don't | need | outter | pipes
 |:---------|:---:| ---:|---|
 |left      |center |right |not specified|
 |aligned   | columns | or ragged|are ok|
-| _same_ |*style*|~as~|`elsewhere` |
+| _same_ |*style*|~~as~~|`elsewhere` |
 don't | need | outter | pipes
 ```
 
@@ -376,9 +393,17 @@ Images
 Other Formatting
 ----------------
 
+### Tool Tip
+
+Basically just a [hyperlink]("anchor tag") with no href defined.
+
+```
+Basically just a [hyperlink]("anchor tag") with no href defined.
+```
+
 ### Horizontal Rules
 
-Three minus-signs(-), asterisks (*), or underscores (_).
+Three minus-signs(`-`), asterisks (`*`), or underscores (`_`).
 
 ---
 
@@ -402,18 +427,11 @@ Footnotes
 
 These were described earlier (under the section on links, they aren't usually
 visible when a `.md` file is parsed - you'll need to hit "raw" the button at the
-top of this page to see how that works.
+top of this page to see how that works.  Note that indentation and bullets work
+as shown.
 
-[1]: http://www.grammar-monster.com/easily_confused/youre_your.htm
-[2]: http://en.wikipedia.org/wiki/Footnote "Wikipedia article on notes"
+* [1]: http://www.grammar-monster.com/easily_confused/youre_your.htm
+* [2]: http://en.wikipedia.org/wiki/Footnote "Wikipedia article on notes"
 [document]: http://en.wikipedia.org/wiki/Document
   [markdown]: http://en.wikipedia.org/wiki/Markdown
   [href of image]: http://sagacious.us/sandbox/sandbox.png "hover text"
-
-```
-[1]: http://www.grammar-monster.com/easily_confused/youre_your.htm
-[2]: http://en.wikipedia.org/wiki/Footnote "Wikipedia article on notes"
-[document]: http://en.wikipedia.org/wiki/Document
-  [markdown]: http://en.wikipedia.org/wiki/Markdown
-  [href of image]: http://sagacious.us/sandbox/sandbox.png "hover text"
-```
