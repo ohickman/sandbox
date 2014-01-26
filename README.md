@@ -15,7 +15,7 @@ To Do
 - [x] make list of [GitHub] markdown
 - [x] upload that list to GitHub
 - [ ] answer a bunch of other questions about handling repos
-- [ ] Achieve world ~domination~ peace
+- [ ] Achieve world ~~domination~~ peace
 
 [`git`]: https://www.kernel.org/pub/software/scm/git/docs/
 [rebase]: http://git-scm.com/book/en/Git-Branching-Rebasing
