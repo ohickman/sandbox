@@ -226,7 +226,9 @@ Links within a document are also supported.  Note that
 * All [headers](#headers-and-titles) are automatically turned into anchors.
 * spaces are replaced with dashes (`-`).
 * all chars are lower case.
-* special characters like `/`, `(`, `)` are omitted.
+* special characters are omitted.
+  * Actually the list of *allowed* non-alphanumeric characters is just `'` and `_`.
+  * Omitted chars are `! @ # $ % ^ & * = + [ { ] } | ; : ' " < > ? \ ~ ,`
 
 Here is the code for the (incomplete) table of contents at the top of this page:
 
