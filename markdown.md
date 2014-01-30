@@ -32,13 +32,13 @@ Text Formatting
 ### blockquote
 
 > If you are neutral in situations of injustice, you have chosen the side of the
-> oppressor.  If an elephant has its foot on the tial of a mouse and you say that you are neutral, the mouse will not appreciate your neutrality.
+> oppressor.  If an elephant has its foot on the tail of a mouse and you say that you are neutral, the mouse will not appreciate your neutrality.
 
 Desmont Tutu
 
 ```
 > If you are neutral in situations of injustice, you have chosen the side of the
-> oppressor.  If an elephant has its foot on the tial of a mouse and you say that you are neutral, the mouse will not appreciate your neutrality.
+> oppressor.  If an elephant has its foot on the tail of a mouse and you say that you are neutral, the mouse will not appreciate your neutrality.
 
 Desmont Tutu
 ```
@@ -55,7 +55,7 @@ Desmont Tutu
 
 words words _emphasized words_ words words
 
-Double underscores still envoke em so be careful: __init__ will get an emphasis,
+Double underscores still invoke em so be careful: __init__ will get an emphasis,
 but it should probably be written `__init__` anyway.
 
 Things not considered emphasis
@@ -65,8 +65,8 @@ Things not considered emphasis
 ```
 words words _emphasized words_ words words
 
-Double underscores still envoke em so be careful: __init__ will get an emphasis,
-but it shoudl probably be written `__init__` anyway.
+Double underscores still invoke em so be careful: __init__ will get an emphasis,
+but it should probably be written `__init__` anyway.
 
 Things not considered emphasis
 * snake_case_words also look like code so no emphasis
@@ -140,17 +140,17 @@ To use `monospace` within a paragraph use a single leading and tailing back tick
 
 ### Paragraphs
 
-Paragraphs are delimited by double carrage returns.
+Paragraphs are delimited by double carriage returns.
 
 There must be a blank line between paragraphs to designate them as such.
-You may add single carage returns so that your text is easier to see (say in
+You may add single carriage returns so that your text is easier to see (say in
 a text editor that is only 80 chars wide), but when this text is interpreted by a GitHub's markdown engine it will be reflowed regardless of line length.
 
 ```
-Paragraphs are delimited by double carrage returns.
+Paragraphs are delimited by double carriage returns.
 
 There must be a blank line between paragraphs to designate them as such.
-You may add single carage returns so that your text is easier to see (say in
+You may add single carriage returns so that your text is easier to see (say in
 a text editor that is only 80 chars wide), but when this text is interpreted by a GitHub's markdown engine it will be reflowed regardless of line length.
 ```
 
@@ -319,7 +319,7 @@ Lists and Tables
   1. first item in the child list.
     1. What if I want a grandchild in a numbered list.
   2. second item in the child list.
-  1. you don't even have ot use the coorect numbers!
+  1. you don't even have to use the correct numbers!
   * unnumbered item in the child list gets numbered anyhow.
     *  but its child list doesn't.
   - each level of a list has uniform numbering.
@@ -333,7 +333,7 @@ Lists and Tables
   1. first item in the child list.
     1. What if I want a grandchild in a numbered list.
   2. second item in the child list.
-  1. you don't even have ot use the coorect numbers!
+  1. you don't even have to use the correct numbers!
   * unnumbered item in the child list gets numbered anyhow.
     *  but its child list doesn't.
   - each level of a list has uniform numbering.
@@ -368,7 +368,7 @@ Tables can be made with the pipe character:
 |left      |center |right |not specified|
 |aligned   | columns | or ragged|are ok|
 | _same_ |*style*|~as~|`elsewhere` |
-don't | need | outter | pipes
+don't | need | outer | pipes
 
 ```
 | header 1 | header 2 | header 3 | header 4 |
@@ -376,18 +376,18 @@ don't | need | outter | pipes
 |left      |center |right |not specified|
 |aligned   | columns | or ragged|are ok|
 | _same_ |*style*|~~as~~|`elsewhere` |
-don't | need | outter | pipes
+don't | need | outer | pipes
 ```
 
 Images
 ------
 
-![alt attribute](http://sagacious.us/sandbox/sandbox.png "hover text (optional - but recomended by web standards)")
+![alt attribute](http://sagacious.us/sandbox/sandbox.png "hover text (optional - but recommended by web standards)")
 
 ![alt attribute][href of image]
 
 ```
-![alt attribute](http://sagacious.us/sandbox/sandbox.png "hover text (optional - but recomended by web standards)")
+![alt attribute](http://sagacious.us/sandbox/sandbox.png "hover text (optional - but recommended by web standards)")
 
 ![alt attribute][href of image]
 ```
